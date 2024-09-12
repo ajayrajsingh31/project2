@@ -13,25 +13,25 @@ spec:
         app: myproject
     spec:
       containers:
-      - name: myproject
-        image: ajayrajsingh31/myproject:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8000
-        env:
-        - name: DB_NAME
-          value: "mydatabase"
-        - name: DB_USER
-          value: "root"
-        - name: DB_PASSWORD
-          value: "password"
-        - name: DB_HOST
-          value: "mysql"
-        - name: DB_PORT
-          value: "3306"
-        volumeMounts:
-        - name: static-files
-          mountPath: /app/staticfiles  # Corrected mountPath
+        - name: myproject
+          image: 'ajayrajsingh31/myproject:latest'
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DB_NAME
+              value: mydatabase
+            - name: DB_USER
+              value: root
+            - name: DB_PASSWORD
+              value: password
+            - name: DB_HOST
+              value: mysql
+            - name: DB_PORT
+              value: '3306'
+          volumeMounts:
+            - name: static-files
+              mountPath: /app/staticfiles
       volumes:
-      - name: static-files
-        emptyDir: {}
+        - name: static-files
+          emptyDir: {}
