@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: myproject
-        image: jarvis0100/myapp:latest
+        image: ajayrajsingh31/myproject:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
         env:
